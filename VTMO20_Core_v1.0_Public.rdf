@@ -1,0 +1,1145 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/vtmo/ontology#"
+     xml:base="https://w3id.org/vtmo/ontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vtmo="https://w3id.org/vtmo/ontology#"
+     xmlns:terms="http://purl.org/dc/terms/">
+   <owl:Ontology rdf:about="https://w3id.org/vtmo/ontology">
+    <owl:versionIRI rdf:resource="https://w3id.org/vtmo/ontology/1.0.0"/>
+
+    <terms:identifier>VTMO20-Core-v1.0</terms:identifier>
+    <terms:creator>Trần Phong Vũ</terms:creator>
+
+    <terms:title xml:lang="en">Vietnamese Traditional Medicinal Plant Ontology</terms:title>
+
+    <rdfs:label xml:lang="en">Vietnamese Traditional Medicinal Plant Ontology</rdfs:label>
+    <rdfs:label xml:lang="vi">Bản thể tri thức cây thuốc Y học cổ truyền Việt Nam</rdfs:label>
+
+    <terms:description xml:lang="en">VTMO20 is a competency-driven OWL ontology developed to represent structured knowledge about Vietnamese traditional medicinal plants.</terms:description>
+
+    <terms:language>en</terms:language>
+    <terms:language>vi</terms:language>
+
+    <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-08-13</terms:issued>
+    <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-08-13</terms:modified>
+
+    <terms:provenance xml:lang="en">VTMO20 Core v1.0 was developed through a competency-driven ontology engineering workflow comprising curated source knowledge, competency questions, ontology modelling, SPARQL validation, and reproducibility evidence.</terms:provenance>
+
+    <terms:subject xml:lang="en">Knowledge Graph</terms:subject>
+    <terms:subject xml:lang="en">Medicinal Plants</terms:subject>
+    <terms:subject xml:lang="en">Ontology Engineering</terms:subject>
+    <terms:subject xml:lang="en">Semantic Web</terms:subject>
+    <terms:subject xml:lang="en">Traditional Medicine</terms:subject>
+    <terms:subject xml:lang="en">Vietnamese Traditional Medicine</terms:subject>
+
+    <owl:versionInfo>1.0.0</owl:versionInfo>
+</owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/language -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/language"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/provenance -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/provenance"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/subject -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/subject"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#belongsToFamily -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/vtmo/ontology#belongsToFamily">
+        <rdfs:domain rdf:resource="https://w3id.org/vtmo/ontology#MedicinalSubstance"/>
+        <rdfs:range rdf:resource="https://w3id.org/vtmo/ontology#PlantFamily"/>
+        <rdfs:comment xml:lang="en">Relates a medicinal substance to its botanical family.</rdfs:comment>
+        <rdfs:label xml:lang="en">belongs to family</rdfs:label>
+        <rdfs:label xml:lang="vi">thuộc họ thực vật</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#belongsToMeridian -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/vtmo/ontology#belongsToMeridian">
+        <rdfs:domain rdf:resource="https://w3id.org/vtmo/ontology#MedicinalSubstance"/>
+        <rdfs:range rdf:resource="https://w3id.org/vtmo/ontology#Meridian"/>
+        <rdfs:comment xml:lang="en">Relates a medicinal substance to a traditional medicine meridian.</rdfs:comment>
+        <rdfs:label xml:lang="en">belongs To Meridian</rdfs:label>
+        <rdfs:label xml:lang="vi">quy vào kinh</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#hasAdministrationMethod -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/vtmo/ontology#hasAdministrationMethod">
+        <rdfs:domain rdf:resource="https://w3id.org/vtmo/ontology#MedicinalSubstance"/>
+        <rdfs:range rdf:resource="https://w3id.org/vtmo/ontology#AdministrationMethod"/>
+        <rdfs:comment xml:lang="en">Relates a medicinal substance to its recommended administration method.</rdfs:comment>
+        <rdfs:label xml:lang="vi">có cách dùng</rdfs:label>
+        <rdfs:label xml:lang="en">has Administration Method</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#hasDosageSpecification -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/vtmo/ontology#hasDosageSpecification">
+        <rdfs:domain rdf:resource="https://w3id.org/vtmo/ontology#MedicinalSubstance"/>
+        <rdfs:range rdf:resource="https://w3id.org/vtmo/ontology#DosageSpecification"/>
+        <rdfs:comment xml:lang="en">Relates a medicinal substance to its recommended dosage specification.</rdfs:comment>
+        <rdfs:label xml:lang="vi">có đặc tả liều dùng</rdfs:label>
+        <rdfs:label xml:lang="en">has dosage specification</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#hasIndication -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/vtmo/ontology#hasIndication">
+        <rdfs:domain rdf:resource="https://w3id.org/vtmo/ontology#MedicinalSubstance"/>
+        <rdfs:range rdf:resource="https://w3id.org/vtmo/ontology#Disease"/>
+        <rdfs:comment xml:lang="en">Relates a medicinal substance to a disease or medical condition for which it is indicated.</rdfs:comment>
+        <rdfs:label xml:lang="vi">có chỉ định</rdfs:label>
+        <rdfs:label xml:lang="en">has indication</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#hasProperty -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/vtmo/ontology#hasProperty">
+        <rdfs:domain rdf:resource="https://w3id.org/vtmo/ontology#MedicinalSubstance"/>
+        <rdfs:range rdf:resource="https://w3id.org/vtmo/ontology#Property"/>
+        <rdfs:comment xml:lang="en">Relates a medicinal substance to its traditional medicinal property.</rdfs:comment>
+        <rdfs:label xml:lang="vi">có tính</rdfs:label>
+        <rdfs:label xml:lang="en">has Property</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#hasScientificName -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/vtmo/ontology#hasScientificName">
+        <rdfs:domain rdf:resource="https://w3id.org/vtmo/ontology#MedicinalSubstance"/>
+        <rdfs:range rdf:resource="https://w3id.org/vtmo/ontology#ScientificName"/>
+        <rdfs:comment xml:lang="en">Relates a medicinal substance to its accepted scientific name.</rdfs:comment>
+        <rdfs:label xml:lang="vi">có tên khoa học</rdfs:label>
+        <rdfs:label xml:lang="en">has scientific name</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#hasTaste -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/vtmo/ontology#hasTaste">
+        <rdfs:domain rdf:resource="https://w3id.org/vtmo/ontology#MedicinalSubstance"/>
+        <rdfs:range rdf:resource="https://w3id.org/vtmo/ontology#Taste"/>
+        <rdfs:comment xml:lang="en">Relates a medicinal substance to its traditional medicinal taste.</rdfs:comment>
+        <rdfs:label xml:lang="vi">có vị</rdfs:label>
+        <rdfs:label xml:lang="en">has Taste</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#hasTherapeuticFunction -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/vtmo/ontology#hasTherapeuticFunction">
+        <rdfs:domain rdf:resource="https://w3id.org/vtmo/ontology#MedicinalSubstance"/>
+        <rdfs:range rdf:resource="https://w3id.org/vtmo/ontology#TherapeuticFunction"/>
+        <rdfs:comment xml:lang="en">Relates a medicinal substance to its therapeutic function in traditional medicine.</rdfs:comment>
+        <rdfs:label xml:lang="vi">có công năng</rdfs:label>
+        <rdfs:label xml:lang="en">has therapeutic function</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#usesPart -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/vtmo/ontology#usesPart">
+        <rdfs:domain rdf:resource="https://w3id.org/vtmo/ontology#MedicinalSubstance"/>
+        <rdfs:range rdf:resource="https://w3id.org/vtmo/ontology#MedicinalPart"/>
+        <rdfs:comment xml:lang="en">Relates a medicinal substance to the plant part used medicinally.</rdfs:comment>
+        <rdfs:label xml:lang="vi">sử dụng bộ phận</rdfs:label>
+        <rdfs:label xml:lang="en">uses part</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#confidenceScore -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/vtmo/ontology#confidenceScore">
+        <rdfs:domain rdf:resource="https://w3id.org/vtmo/ontology#EvidenceAssertion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="en">Specifies the confidence score assigned to an evidence assertion.</rdfs:comment>
+        <rdfs:label xml:lang="en">confidence score</rdfs:label>
+        <rdfs:label xml:lang="vi">điểm tin cậy</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#dosageText -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/vtmo/ontology#dosageText">
+        <rdfs:domain rdf:resource="https://w3id.org/vtmo/ontology#DosageSpecification"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Provides a textual description of the recommended dosage for a medicinal substance.</rdfs:comment>
+        <rdfs:label xml:lang="en">dosage text</rdfs:label>
+        <rdfs:label xml:lang="vi">mô tả liều dùng</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#doseUnit -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/vtmo/ontology#doseUnit">
+        <rdfs:domain rdf:resource="https://w3id.org/vtmo/ontology#DosageSpecification"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">specifies the unit used to express dosage values in a dosage specification for a medicinal substance.</rdfs:comment>
+        <rdfs:label xml:lang="en">dose unit</rdfs:label>
+        <rdfs:label xml:lang="vi">đơn vị liều dùng</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#maximumDose -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/vtmo/ontology#maximumDose">
+        <rdfs:domain rdf:resource="https://w3id.org/vtmo/ontology#DosageSpecification"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="en">specifies the maximum recommended dosage value in a dosage specification for a medicinal substance.</rdfs:comment>
+        <rdfs:label xml:lang="vi">liều tối đa</rdfs:label>
+        <rdfs:label xml:lang="en">maximum dose</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#minimumDose -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/vtmo/ontology#minimumDose">
+        <rdfs:domain rdf:resource="https://w3id.org/vtmo/ontology#DosageSpecification"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="en">specifies the minimum recommended dosage value in a dosage specification for a medicinal substance.</rdfs:comment>
+        <rdfs:label xml:lang="vi">liều tối thiểu</rdfs:label>
+        <rdfs:label xml:lang="en">minimum dose</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#recordID -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/vtmo/ontology#recordID">
+        <rdfs:domain rdf:resource="https://w3id.org/vtmo/ontology#DecisionRecord"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the unique identifier assigned to a decision record.</rdfs:comment>
+        <rdfs:label xml:lang="vi">mã hồ sơ</rdfs:label>
+        <rdfs:label xml:lang="en">record identifier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#recordStatus -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/vtmo/ontology#recordStatus">
+        <rdfs:domain rdf:resource="https://w3id.org/vtmo/ontology#DecisionRecord"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the current status of a decision record.</rdfs:comment>
+        <rdfs:label xml:lang="en">record status</rdfs:label>
+        <rdfs:label xml:lang="vi">trạng thái hồ sơ</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#recordVersion -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/vtmo/ontology#recordVersion">
+        <rdfs:domain rdf:resource="https://w3id.org/vtmo/ontology#DecisionRecord"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the version identifier of a decision record</rdfs:comment>
+        <rdfs:label xml:lang="vi">phiên bản hồ sơ</rdfs:label>
+        <rdfs:label xml:lang="en">record version</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#verificationDate -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/vtmo/ontology#verificationDate">
+        <rdfs:domain rdf:resource="https://w3id.org/vtmo/ontology#EvidenceAssertion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">Specifies the date on which a record was verified</rdfs:comment>
+        <rdfs:label xml:lang="vi">ngày kiểm định</rdfs:label>
+        <rdfs:label xml:lang="en">verification date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#vietnameseName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/vtmo/ontology#vietnameseName">
+        <rdfs:domain rdf:resource="https://w3id.org/vtmo/ontology#MedicinalSubstance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the Vietnamese name of a medicinal substance.</rdfs:comment>
+        <rdfs:label xml:lang="en">Vietnamese name</rdfs:label>
+        <rdfs:label xml:lang="vi">tên tiếng Việt</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#AdministrationMethod -->
+
+    <owl:Class rdf:about="https://w3id.org/vtmo/ontology#AdministrationMethod">
+        <rdfs:comment xml:lang="en">The recommended method for administering a medicinal substance.</rdfs:comment>
+        <rdfs:label xml:lang="en">Administration Method</rdfs:label>
+        <rdfs:label xml:lang="vi">Cách dùng</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#DecisionRecord -->
+
+    <owl:Class rdf:about="https://w3id.org/vtmo/ontology#DecisionRecord">
+        <rdfs:comment xml:lang="en">A record documenting decisions made during ontology development and governance.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Biên bản quyết định</rdfs:label>
+        <rdfs:label xml:lang="en">Decision Record</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Disease -->
+
+    <owl:Class rdf:about="https://w3id.org/vtmo/ontology#Disease">
+        <rdfs:comment xml:lang="en">A disease or medical condition that may be treated by a medicinal substance.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Bệnh</rdfs:label>
+        <rdfs:label xml:lang="en">Disease</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#DosageSpecification -->
+
+    <owl:Class rdf:about="https://w3id.org/vtmo/ontology#DosageSpecification">
+        <rdfs:comment xml:lang="en">A specification describing the recommended dosage of a medicinal substance.</rdfs:comment>
+        <rdfs:label xml:lang="en">Dosage Specification</rdfs:label>
+        <rdfs:label xml:lang="vi">Đặc tả liều dùng</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#EvidenceAssertion -->
+
+    <owl:Class rdf:about="https://w3id.org/vtmo/ontology#EvidenceAssertion">
+        <rdfs:comment xml:lang="en">A verified assertion supported by one or more evidence sources.</rdfs:comment>
+        <rdfs:label xml:lang="en">Evidence Assertion</rdfs:label>
+        <rdfs:label xml:lang="vi">Phát biểu chứng cứ</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#EvidenceSource -->
+
+    <owl:Class rdf:about="https://w3id.org/vtmo/ontology#EvidenceSource">
+        <rdfs:comment xml:lang="en">A source providing evidence to support medicinal knowledge.</rdfs:comment>
+        <rdfs:label xml:lang="en">Evidence Source</rdfs:label>
+        <rdfs:label xml:lang="vi">Nguồn chứng cứ</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#MedicinalPart -->
+
+    <owl:Class rdf:about="https://w3id.org/vtmo/ontology#MedicinalPart">
+        <rdfs:comment xml:lang="en">The part of a medicinal plant used for therapeutic or medicinal purposes.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Bộ phận dùng</rdfs:label>
+        <rdfs:label xml:lang="en">Medicinal Part</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#MedicinalSubstance -->
+
+    <owl:Class rdf:about="https://w3id.org/vtmo/ontology#MedicinalSubstance">
+        <rdfs:comment xml:lang="en">A medicinal plant or medicinal substance used in Vietnamese traditional medicine.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Dược liệu</rdfs:label>
+        <rdfs:label xml:lang="en">Medicinal Substance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Meridian -->
+
+    <owl:Class rdf:about="https://w3id.org/vtmo/ontology#Meridian">
+        <rdfs:comment xml:lang="en">A traditional medicine meridian associated with a medicinal substance.</rdfs:comment>
+        <rdfs:label xml:lang="en">Meridian</rdfs:label>
+        <rdfs:label xml:lang="vi">Quy kinh</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#PlantFamily -->
+
+    <owl:Class rdf:about="https://w3id.org/vtmo/ontology#PlantFamily">
+        <rdfs:comment xml:lang="en">The botanical family to which a medicinal plant belongs.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Họ thực vật</rdfs:label>
+        <rdfs:label xml:lang="en">Plant Family</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Property -->
+
+    <owl:Class rdf:about="https://w3id.org/vtmo/ontology#Property">
+        <rdfs:comment xml:lang="en">The traditional medicinal property, such as cold, warm or neutral, of a medicinal substance.</rdfs:comment>
+        <rdfs:label xml:lang="en">Property</rdfs:label>
+        <rdfs:label xml:lang="vi">Tính</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#ScientificName -->
+
+    <owl:Class rdf:about="https://w3id.org/vtmo/ontology#ScientificName">
+        <rdfs:comment xml:lang="en">The accepted scientific name assigned to a medicinal substance</rdfs:comment>
+        <rdfs:label xml:lang="en">Scientific Name</rdfs:label>
+        <rdfs:label xml:lang="vi">Tên khoa học</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Taste -->
+
+    <owl:Class rdf:about="https://w3id.org/vtmo/ontology#Taste">
+        <rdfs:comment xml:lang="en">The traditional medicinal taste characteristic of a medicinal substance.</rdfs:comment>
+        <rdfs:label xml:lang="en">Taste</rdfs:label>
+        <rdfs:label xml:lang="vi">Vị</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#TherapeuticFunction -->
+
+    <owl:Class rdf:about="https://w3id.org/vtmo/ontology#TherapeuticFunction">
+        <rdfs:comment xml:lang="en">A therapeutic function or traditional medicinal action of a medicinal substance.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Công năng</rdfs:label>
+        <rdfs:label xml:lang="en">Therapeutic Function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Administration_MS001 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Administration_MS001">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#AdministrationMethod"/>
+        <rdfs:comment xml:lang="en">Administration method for Mentha arvensis L.</rdfs:comment>
+        <rdfs:label xml:lang="en">Administration_MS001</rdfs:label>
+        <rdfs:label xml:lang="vi">Cách dùng Bạc hà</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Disease_ChestHypochondriacFullness -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Disease_ChestHypochondriacFullness">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Disease"/>
+        <rdfs:comment xml:lang="en">Represents chest and hypochondriac fullness as an indication in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Chest and Hypochondriac Fullness</rdfs:label>
+        <rdfs:label xml:lang="vi">Ngực sườn đầy tức</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Disease_Headache -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Disease_Headache">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Disease"/>
+        <rdfs:comment xml:lang="en">Represents headache as an indication in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Headache</rdfs:label>
+        <rdfs:label xml:lang="vi">Nhức đầu</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Disease_Influenza -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Disease_Influenza">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Disease"/>
+        <rdfs:comment xml:lang="en">Represents influenza as an indication in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Cảm cúm</rdfs:label>
+        <rdfs:label xml:lang="en">Influenza</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Disease_Measles -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Disease_Measles">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Disease"/>
+        <rdfs:comment xml:lang="en">Represents measles as an indication for which Mentha arvensis L. is traditionally used to support eruption.</rdfs:comment>
+        <rdfs:label xml:lang="en">Measles</rdfs:label>
+        <rdfs:label xml:lang="vi">Sởi</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Disease_NasalCongestion -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Disease_NasalCongestion">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Disease"/>
+        <rdfs:comment>Represents influenza as an indication in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Nasal Congestion</rdfs:label>
+        <rdfs:label xml:lang="vi">Nghẹt mũi</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Disease_RedEye -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Disease_RedEye">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Disease"/>
+        <rdfs:comment xml:lang="en">Represents red eye as an indication in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Red Eye</rdfs:label>
+        <rdfs:label xml:lang="vi">Đau mắt đỏ</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Disease_WindHeatCommonCold -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Disease_WindHeatCommonCold">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Disease"/>
+        <rdfs:comment xml:lang="en">Represents wind-heat common cold as an indication in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Cảm mạo phong nhiệt</rdfs:label>
+        <rdfs:label xml:lang="en">Wind-Heat Common Cold</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Dosage_MS001 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Dosage_MS001">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#DosageSpecification"/>
+        <dosageText>12–20 g/day</dosageText>
+        <doseUnit>g/day</doseUnit>
+        <maximumDose rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20</maximumDose>
+        <minimumDose rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">12</minimumDose>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#MedicinalPart_Bark -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#MedicinalPart_Bark">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#MedicinalPart"/>
+        <rdfs:comment xml:lang="en">Represents the Bark as a medicinal plant part used in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Bark</rdfs:label>
+        <rdfs:label xml:lang="vi">Vỏ thân</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#MedicinalPart_Flower -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#MedicinalPart_Flower">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#MedicinalPart"/>
+        <rdfs:comment xml:lang="en">Represents the Flower as a medicinal plant part used in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Flower</rdfs:label>
+        <rdfs:label xml:lang="vi">Hoa</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#MedicinalPart_Fruit -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#MedicinalPart_Fruit">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#MedicinalPart"/>
+        <rdfs:comment xml:lang="en">Represents the Fruit as a medicinal plant part used in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Fruit</rdfs:label>
+        <rdfs:label xml:lang="vi">Quả</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#MedicinalPart_Latex -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#MedicinalPart_Latex">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#MedicinalPart"/>
+        <rdfs:comment xml:lang="en">Represents the Latex as a medicinal plant part used in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Latex</rdfs:label>
+        <rdfs:label xml:lang="vi">Nhựa mủ</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#MedicinalPart_Leaf -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#MedicinalPart_Leaf">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#MedicinalPart"/>
+        <rdfs:comment xml:lang="en">Represents the leaf as a medicinal plant part used in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Leaf</rdfs:label>
+        <rdfs:label xml:lang="vi">Lá</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#MedicinalPart_Rhizome -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#MedicinalPart_Rhizome">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#MedicinalPart"/>
+        <rdfs:comment xml:lang="en">Represents the Rhizome as a medicinal plant part used in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Rhizome</rdfs:label>
+        <rdfs:label xml:lang="vi">Thân rễ</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#MedicinalPart_Root -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#MedicinalPart_Root">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#MedicinalPart"/>
+        <rdfs:comment xml:lang="en">Represents the Root as a medicinal plant part used in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Root</rdfs:label>
+        <rdfs:label xml:lang="vi">Rễ</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#MedicinalPart_Seed -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#MedicinalPart_Seed">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#MedicinalPart"/>
+        <rdfs:comment xml:lang="en">Represents the Seed as a medicinal plant part used in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Hạt</rdfs:label>
+        <rdfs:label xml:lang="en">Seed</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#MedicinalPart_Stem -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#MedicinalPart_Stem">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#MedicinalPart"/>
+        <rdfs:comment xml:lang="en">Represents the Stem as a medicinal plant part used in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Stem</rdfs:label>
+        <rdfs:label xml:lang="vi">Thân</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#MedicinalPart_Tuber -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#MedicinalPart_Tuber">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#MedicinalPart"/>
+        <rdfs:comment xml:lang="en">Represents the Tuber as a medicinal plant part used in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Củ</rdfs:label>
+        <rdfs:label xml:lang="en">Tuber</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#MedicinalPart_WholePlant -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#MedicinalPart_WholePlant">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#MedicinalPart"/>
+        <rdfs:comment xml:lang="en">Represents the Whole Plant as a medicinal plant part used in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Toàn cây</rdfs:label>
+        <rdfs:label xml:lang="en">Whole Plant</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#MedicinalPart_Wood -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#MedicinalPart_Wood">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#MedicinalPart"/>
+        <rdfs:comment xml:lang="en">Represents the Wood as a medicinal plant part used in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Gỗ</rdfs:label>
+        <rdfs:label xml:lang="en">Wood</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#MedicinalSubstance_MenthaArvensis -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#MedicinalSubstance_MenthaArvensis">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#MedicinalSubstance"/>
+        <belongsToFamily rdf:resource="https://w3id.org/vtmo/ontology#PlantFamily_Lamiaceae"/>
+        <belongsToMeridian rdf:resource="https://w3id.org/vtmo/ontology#Meridian_Liver"/>
+        <belongsToMeridian rdf:resource="https://w3id.org/vtmo/ontology#Meridian_Lung"/>
+        <hasAdministrationMethod rdf:resource="https://w3id.org/vtmo/ontology#Administration_MS001"/>
+        <hasDosageSpecification rdf:resource="https://w3id.org/vtmo/ontology#Dosage_MS001"/>
+        <hasIndication rdf:resource="https://w3id.org/vtmo/ontology#Disease_ChestHypochondriacFullness"/>
+        <hasIndication rdf:resource="https://w3id.org/vtmo/ontology#Disease_Headache"/>
+        <hasIndication rdf:resource="https://w3id.org/vtmo/ontology#Disease_Influenza"/>
+        <hasIndication rdf:resource="https://w3id.org/vtmo/ontology#Disease_Measles"/>
+        <hasIndication rdf:resource="https://w3id.org/vtmo/ontology#Disease_NasalCongestion"/>
+        <hasIndication rdf:resource="https://w3id.org/vtmo/ontology#Disease_RedEye"/>
+        <hasIndication rdf:resource="https://w3id.org/vtmo/ontology#Disease_WindHeatCommonCold"/>
+        <hasProperty rdf:resource="https://w3id.org/vtmo/ontology#Property_Cool"/>
+        <hasScientificName rdf:resource="https://w3id.org/vtmo/ontology#ScientificName_MenthaArvensis"/>
+        <hasTaste rdf:resource="https://w3id.org/vtmo/ontology#Taste_Pungent"/>
+        <hasTherapeuticFunction rdf:resource="https://w3id.org/vtmo/ontology#TherapeuticFunction_ClearHeat"/>
+        <hasTherapeuticFunction rdf:resource="https://w3id.org/vtmo/ontology#TherapeuticFunction_Detoxify"/>
+        <hasTherapeuticFunction rdf:resource="https://w3id.org/vtmo/ontology#TherapeuticFunction_DispelWind"/>
+        <hasTherapeuticFunction rdf:resource="https://w3id.org/vtmo/ontology#TherapeuticFunction_PromoteEruption"/>
+        <hasTherapeuticFunction rdf:resource="https://w3id.org/vtmo/ontology#TherapeuticFunction_RelieveConstraint"/>
+        <hasTherapeuticFunction rdf:resource="https://w3id.org/vtmo/ontology#TherapeuticFunction_SootheLiver"/>
+        <usesPart rdf:resource="https://w3id.org/vtmo/ontology#MedicinalPart_Leaf"/>
+        <recordID>MS001</recordID>
+        <vietnameseName>Bạc hà</vietnameseName>
+        <rdfs:comment xml:lang="en">Represents Mentha arvensis L., known as Bạc hà, as a medicinal substance in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Bạc hà</rdfs:label>
+        <rdfs:label xml:lang="en">Mentha arvensis L.</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Meridian_Bladder -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Meridian_Bladder">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Meridian"/>
+        <rdfs:comment xml:lang="en">Represents the Bladder Meridian in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Bladder Meridian</rdfs:label>
+        <rdfs:label xml:lang="vi">Kinh Bàng quang</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Meridian_Gallbladder -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Meridian_Gallbladder">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Meridian"/>
+        <rdfs:comment xml:lang="en">Represents the Gallbladder Meridian in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Gallbladder Meridian</rdfs:label>
+        <rdfs:label xml:lang="vi">Kinh Đởm</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Meridian_Heart -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Meridian_Heart">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Meridian"/>
+        <rdfs:comment xml:lang="en">Represents the Heart Meridian in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Heart Meridian</rdfs:label>
+        <rdfs:label xml:lang="vi">Kinh Tâm</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Meridian_Kidney -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Meridian_Kidney">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Meridian"/>
+        <rdfs:comment xml:lang="en">Represents the Kidney Meridian in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Kidney Meridian</rdfs:label>
+        <rdfs:label xml:lang="vi">Kinh Thận</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Meridian_LargeIntestine -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Meridian_LargeIntestine">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Meridian"/>
+        <rdfs:comment xml:lang="en">Represents the Large Intestine meridian in Vietnamese Traditional Medicine</rdfs:comment>
+        <rdfs:label xml:lang="vi">Kinh Đại trường</rdfs:label>
+        <rdfs:label xml:lang="en">Large Intestine Meridian</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Meridian_Liver -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Meridian_Liver">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Meridian"/>
+        <rdfs:comment xml:lang="en">Represents the Liver meridian in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Kinh Can</rdfs:label>
+        <rdfs:label xml:lang="en">Liver Meridian</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Meridian_Lung -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Meridian_Lung">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Meridian"/>
+        <rdfs:comment xml:lang="en">Represents the Lung meridian in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Kinh Phế</rdfs:label>
+        <rdfs:label xml:lang="en">Lung Meridian</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Meridian_Pericardium -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Meridian_Pericardium">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Meridian"/>
+        <rdfs:comment xml:lang="en">Represents the Pericardium Meridian in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Kinh Tâm bào</rdfs:label>
+        <rdfs:label xml:lang="en">Pericardium Meridian</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Meridian_SmallIntestine -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Meridian_SmallIntestine">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Meridian"/>
+        <rdfs:comment>Represents the Small Intestine Meridian in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Kinh Tiểu trường</rdfs:label>
+        <rdfs:label xml:lang="en">Small Intestine Meridian</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Meridian_Spleen -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Meridian_Spleen">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Meridian"/>
+        <rdfs:comment xml:lang="en">Represents the Spleen Meridian in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Kinh Tỳ</rdfs:label>
+        <rdfs:label xml:lang="en">Spleen Meridian</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Meridian_Stomach -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Meridian_Stomach">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Meridian"/>
+        <rdfs:comment xml:lang="en">Represents the Stomach meridian in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Kinh Vị</rdfs:label>
+        <rdfs:label xml:lang="en">Stomach Meridian</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Meridian_TripleBurner -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Meridian_TripleBurner">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Meridian"/>
+        <rdfs:comment xml:lang="en">TripleBurner Meridian</rdfs:comment>
+        <rdfs:label xml:lang="vi">Kinh Tam tiêu</rdfs:label>
+        <rdfs:label xml:lang="en">TripleBurner Meridian</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#PlantFamily_Lamiaceae -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#PlantFamily_Lamiaceae">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#PlantFamily"/>
+        <rdfs:comment xml:lang="en">Họ Hoa môi</rdfs:comment>
+        <rdfs:label xml:lang="vi">Họ Hoa môi</rdfs:label>
+        <rdfs:label xml:lang="en">Lamiaceae</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Property_Cold -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Property_Cold">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Property"/>
+        <rdfs:comment xml:lang="en">Represents the cold property in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Cold</rdfs:label>
+        <rdfs:label xml:lang="vi">Hàn</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Property_Cool -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Property_Cool">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Property"/>
+        <rdfs:comment xml:lang="en">Represents the cool property in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Cool</rdfs:label>
+        <rdfs:label xml:lang="vi">Lương</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Property_Hot -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Property_Hot">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Property"/>
+        <rdfs:comment xml:lang="en">Represents the hot property in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Hot</rdfs:label>
+        <rdfs:label xml:lang="vi">Nhiệt</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Property_Neutral -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Property_Neutral">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Property"/>
+        <rdfs:comment xml:lang="en">Represents the neutral property in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Bình</rdfs:label>
+        <rdfs:label xml:lang="en">Neutral</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Property_Warm -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Property_Warm">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Property"/>
+        <rdfs:comment xml:lang="en">Represents the warm property in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Warm</rdfs:label>
+        <rdfs:label xml:lang="vi">Ôn</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#ScientificName_MenthaArvensis -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#ScientificName_MenthaArvensis">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#ScientificName"/>
+        <rdfs:comment xml:lang="en">Represents the scientific name Mentha arvensis L. of the medicinal substance Bạc hà.</rdfs:comment>
+        <rdfs:label xml:lang="en">Mentha arvensis L.</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Scientific_Name -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Scientific_Name">
+        <rdfs:comment xml:lang="en">Represents the scientific name Mentha arvensis L. associated with the medicinal substance Bạc hà.
+Language: en</rdfs:comment>
+        <rdfs:label xml:lang="en">Mentha arvensis L.</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Taste_Astringent -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Taste_Astringent">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Taste"/>
+        <rdfs:comment xml:lang="en">Represents the astringent taste in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Astringent</rdfs:label>
+        <rdfs:label xml:lang="vi">Chát</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Taste_Bitter -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Taste_Bitter">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Taste"/>
+        <rdfs:comment xml:lang="en">Represents the bitter taste in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Bitter</rdfs:label>
+        <rdfs:label xml:lang="vi">Đắng</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Taste_Bland -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Taste_Bland">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Taste"/>
+        <rdfs:comment xml:lang="en">Represents the bland taste in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Bland</rdfs:label>
+        <rdfs:label xml:lang="vi">Nhạt</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Taste_Pungent -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Taste_Pungent">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Taste"/>
+        <rdfs:comment xml:lang="en">Represents the pungent taste in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Cay</rdfs:label>
+        <rdfs:label xml:lang="en">Pungent</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Taste_Salty -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Taste_Salty">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Taste"/>
+        <rdfs:comment xml:lang="en">Represents the salty taste in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Mặn</rdfs:label>
+        <rdfs:label xml:lang="en">Salty</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Taste_Sour -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Taste_Sour">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Taste"/>
+        <rdfs:comment xml:lang="en">Represents the sour taste in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Chua</rdfs:label>
+        <rdfs:label xml:lang="en">Sour</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#Taste_Sweet -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#Taste_Sweet">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#Taste"/>
+        <rdfs:comment xml:lang="en">Represents the sweet taste in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Ngọt</rdfs:label>
+        <rdfs:label xml:lang="en">Sweet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#TherapeuticFunction_ClearHeat -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#TherapeuticFunction_ClearHeat">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#TherapeuticFunction"/>
+        <rdfs:comment xml:lang="en">Represents the therapeutic function &quot;Thanh nhiệt&quot; in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Clear Heat</rdfs:label>
+        <rdfs:label xml:lang="vi">Thanh nhiệt</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#TherapeuticFunction_Detoxify -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#TherapeuticFunction_Detoxify">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#TherapeuticFunction"/>
+        <rdfs:comment>Represents the therapeutic function &quot;Giải độc&quot; in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Detoxify</rdfs:label>
+        <rdfs:label xml:lang="vi">Giải độc</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#TherapeuticFunction_DispelWind -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#TherapeuticFunction_DispelWind">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#TherapeuticFunction"/>
+        <rdfs:comment xml:lang="en">Sơ phong</rdfs:comment>
+        <rdfs:label xml:lang="en">Dispel Wind</rdfs:label>
+        <rdfs:label xml:lang="vi">Sơ phong</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#TherapeuticFunction_PromoteEruption -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#TherapeuticFunction_PromoteEruption">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#TherapeuticFunction"/>
+        <rdfs:comment xml:lang="en">Thấu chẩn</rdfs:comment>
+        <rdfs:label xml:lang="en">Promote Eruption</rdfs:label>
+        <rdfs:label xml:lang="vi">Thấu chẩn</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#TherapeuticFunction_RelieveConstraint -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#TherapeuticFunction_RelieveConstraint">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#TherapeuticFunction"/>
+        <rdfs:comment xml:lang="en">Represents the therapeutic function &quot;Giải uất&quot; in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="vi">Giải uất</rdfs:label>
+        <rdfs:label xml:lang="en">Relieve Constraint</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/vtmo/ontology#TherapeuticFunction_SootheLiver -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/vtmo/ontology#TherapeuticFunction_SootheLiver">
+        <rdf:type rdf:resource="https://w3id.org/vtmo/ontology#TherapeuticFunction"/>
+        <rdfs:comment>Represents the therapeutic function &quot;Sơ can&quot; in Vietnamese Traditional Medicine.</rdfs:comment>
+        <rdfs:label xml:lang="en">Soothe the Liver</rdfs:label>
+        <rdfs:label xml:lang="vi">Sơ can</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
